@@ -145,3 +145,26 @@ for (let index = 0; index < 4; index++) {
     music.playMelody("G G - A A - B B ", 500)
 }
 music.jumpUp.play()
+tiles.setTilemap(tiles.createTilemap(
+            hex`100010000a0a0a0a0a0a0a09090a0a0a0a0a0a0a0a01060606060609090606060606030a0a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a09090909090909090909090909090909090909090909090909090909090909090a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a0a05090909090909090909090909070a0a04080808080809090808080808020a0a0a0a0a0a0a0a09090a0a0a0a0a0a0a`,
+            img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`,
+            [myTiles.tile0,sprites.castle.tilePath1,sprites.castle.tilePath9,sprites.castle.tilePath3,sprites.castle.tilePath7,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath8,sprites.castle.tilePath5,sprites.builtin.forestTiles0],
+            TileScale.Sixteen
+        ))
