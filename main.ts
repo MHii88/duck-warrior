@@ -94,7 +94,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (spri
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (sprite, location) {
     tiles.setTilemap(tiles.createTilemap(
-            hex`100010000000030404050406060504050507000000000c1a12121212121212121408000000000c1214121212181812121209000000000e1212121212121214141209000000000c1a18181214121218161a09000000000c1212121814121218121208000000000e1212121212121212121209000000000c12141218121214121a1b09000000000c1212121814141212181809000000000e1219121814121212181c08000000000e1b19191212121212121c08000000000e1218181212141212121208000000000b100f1d1218121412141c08000000000000000c1212121212121a09000000000000000e12121212121a1508000000000000000b101111100f0f0f0a0000`,
+            hex`100010000000030404050406060504050507000000000c1a12121212121212121408000000000c1214121212181812121209000000000e1212121212121214141209000000000c1a18181214121218161a09000000000c1212121814121218121208000000000e1212121212121212121209000000000c19141218121214121a1b09000000000c1212121814141212181809000000000e121b121814121212181c08000000000e1b19121212121212121c08000000000e1b18181212141212121208000000000b100f1d1218121412141c08000000000000000c1212121212121a09000000000000000e12121212121a1508000000000000000b101111100f0f0f0a0000`,
             img`
 . . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
 . . 2 2 . . . . . . . . . 2 . . 
@@ -103,17 +103,17 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
 . . 2 2 . . . . . . . . 2 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
-. . 2 . . . . . . . . 2 2 2 . . 
+. . 2 2 . . . . . . . 2 2 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
 . . 2 . 2 . . . . . . . 2 2 . . 
-. . 2 2 2 2 . . . . . . 2 2 . . 
-. . 2 . . . . . . . . . . 2 . . 
+. . 2 2 2 . . . . . . . 2 2 . . 
+. . 2 2 . . . . . . . . . 2 . . 
 . . 2 2 2 2 . . . . . . 2 2 . . 
 . . . . . 2 . . . . . . 2 2 . . 
 . . . . . 2 . . . . . 2 2 2 . . 
-. . . . . 2 2 2 2 2 2 2 2 2 . . 
+. . . . . 2 2 . . 2 2 2 2 2 . . 
 `,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorth1,sprites.dungeon.stairSouth,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.stairNorth,sprites.dungeon.floorDark0,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark1,sprites.dungeon.floorDark3,sprites.dungeon.floorDark5,sprites.dungeon.floorMixed,sprites.dungeon.floorDark4,sprites.castle.rock0,sprites.castle.rock2,sprites.castle.rock1,sprites.builtin.oceanDepths0,sprites.dungeon.greenInnerNorthEast],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorth1,sprites.dungeon.stairSouth,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterSouth1,sprites.dungeon.stairNorth,sprites.dungeon.floorDark0,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark1,sprites.dungeon.floorDark3,sprites.dungeon.floorDark5,sprites.dungeon.floorMixed,sprites.dungeon.floorDark4,sprites.castle.rock0,sprites.castle.rock2,sprites.castle.rock1,sprites.builtin.oceanDepths0,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.stairWest,sprites.dungeon.darkGroundWest,sprites.dungeon.floorLight4],
             TileScale.Sixteen
         ))
     tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 1))
@@ -199,7 +199,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-    tiles.placeOnTile(Ghost_3, tiles.getTileLocation(2, 9))
+    tiles.placeOnTile(Ghost_3, tiles.getTileLocation(4, 9))
     Ghost_3.setVelocity(90, 0)
     Ghost_4 = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -227,7 +227,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-    tiles.placeOnTile(Ghost_4, tiles.getTileLocation(1, 12))
+    tiles.placeOnTile(Ghost_4, tiles.getTileLocation(5, 12))
     Ghost_4.setVelocity(90, 0)
 })
 scene.onHitWall(SpriteKind.Enemy, function (sprite) {
@@ -467,6 +467,10 @@ scene.onHitWall(SpriteKind.Enemy, function (sprite) {
 `)
         }
     }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.over(false)
+    music.wawawawaa.play()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
     tiles.setTileAt(location, sprites.dungeon.buttonOrangeDepressed)
