@@ -143,10 +143,69 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_1, tiles.getTileLocation(4, 4))
     Ghost_1.setVelocity(50, 0)
 })
 scene.onHitWall(SpriteKind.Enemy, function (sprite) {
-	
+    if (Ghost_1.isHittingTile(CollisionDirection.Right)) {
+        Ghost_1.vx = -1 * Ghost_1.vx
+        Ghost_1.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+    } else {
+        if (Ghost_1.isHittingTile(CollisionDirection.Left)) {
+            Ghost_1.vx = -1 * Ghost_1.vx
+            Ghost_1.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+        }
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
     tiles.setTileAt(location, sprites.dungeon.buttonOrangeDepressed)
