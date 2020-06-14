@@ -145,6 +145,90 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (spri
 `, SpriteKind.Enemy)
     tiles.placeOnTile(Ghost_1, tiles.getTileLocation(4, 4))
     Ghost_1.setVelocity(50, 0)
+    Ghost_2 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_2, tiles.getTileLocation(4, 7))
+    Ghost_2.setVelocity(70, 0)
+    Ghost_3 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_3, tiles.getTileLocation(2, 9))
+    Ghost_3.setVelocity(90, 0)
+    Ghost_4 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_4, tiles.getTileLocation(1, 12))
+    Ghost_4.setVelocity(90, 0)
 })
 scene.onHitWall(SpriteKind.Enemy, function (sprite) {
     if (Ghost_1.isHittingTile(CollisionDirection.Right)) {
@@ -206,6 +290,183 @@ scene.onHitWall(SpriteKind.Enemy, function (sprite) {
 `)
         }
     }
+    if (Ghost_2.isHittingTile(CollisionDirection.Right)) {
+        Ghost_2.vx = -1 * Ghost_2.vx
+        Ghost_2.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+    } else {
+        if (Ghost_2.isHittingTile(CollisionDirection.Left)) {
+            Ghost_2.vx = -1 * Ghost_2.vx
+            Ghost_2.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+        }
+    }
+    if (Ghost_3.isHittingTile(CollisionDirection.Right)) {
+        Ghost_3.vx = -1 * Ghost_3.vx
+        Ghost_3.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+    } else {
+        if (Ghost_3.isHittingTile(CollisionDirection.Left)) {
+            Ghost_3.vx = -1 * Ghost_3.vx
+            Ghost_3.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+        }
+    }
+    if (Ghost_4.isHittingTile(CollisionDirection.Right)) {
+        Ghost_4.vx = -1 * Ghost_4.vx
+        Ghost_4.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+    } else {
+        if (Ghost_4.isHittingTile(CollisionDirection.Left)) {
+            Ghost_4.vx = -1 * Ghost_4.vx
+            Ghost_4.setImage(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f b d 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d d 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d 1 1 1 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f d d d d d d 1 1 1 d f . . . . . . 
+. . . . . . f b d d d d d d d 1 d f . . . . . . 
+. . . . . . f f b b d d b f d 1 d f . . . . . . 
+. . . . . . . f c b b d c f d d b f . . . . . . 
+. . . . . . . f f f b d d c c f f f f . . . . . 
+. . . . . . . f f f f c f b b b 1 b c f . . . . 
+. . . . . . f f f f f f f f c d 1 b 1 f . . . . 
+. . . f f f f f f f f f f . . f d f d f . . . . 
+. . . . . f f f f f f . . . . . f . f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+        }
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (sprite, location) {
     tiles.setTileAt(location, sprites.dungeon.buttonOrangeDepressed)
@@ -215,6 +476,9 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (s
         tiles.setWallAt(value, false)
     }
 })
+let Ghost_4: Sprite = null
+let Ghost_3: Sprite = null
+let Ghost_2: Sprite = null
 let Ghost_1: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(img`
