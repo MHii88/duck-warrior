@@ -1,3 +1,7 @@
+namespace SpriteKind {
+    export const NPC = SpriteKind.create()
+    export const Enemy2 = SpriteKind.create()
+}
 namespace myTiles {
     //% blockIdentity=images._tile
     export const tile0 = img`
@@ -57,6 +61,134 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.NPC, function (sprite, otherSprite) {
+    effects.confetti.startScreenEffect()
+    game.over(true)
+    game.showLongText("You Made it out of the dungeon!", DialogLayout.Top)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairNorth, function (sprite, location) {
+    Ghost_4.destroy()
+    Ghost_3.destroy()
+    Ghost_1.destroy()
+    Ghost_2.destroy()
+    tiles.setTilemap(tiles.createTilemap(
+            hex`10001000150303110000000000000000000000000d1a1c0a0000000000000000000000000d1e25080505041115040504040505110f07251e1e1e2508091e1e1e251e1608000d1c060c07262a1e251e1d1e1d1614000d1e0b000d1e2a1e1e1d1e251e1614000d1e0823091e06071e251e1d1e1606000e1e251d261e0b0f0c1010100c0c12000f10071e1e061200000000000000001523110e1e25080505052305050505110e180a0e1e1e1e251e1e1d251e1d1e0b0e1e0a0e1d1e060c100c072506071a0b0d2508091e06121504110e1e0b0f22120e1e1d1e250804091c0a0e25080411000f1010071e1e1e1d1e0b0d1e2a210b000000000f220c0c0c0c120f220c0c1200`,
+            img`
+2 2 2 2 . . . . . . . . . . . . 
+2 . . 2 . . . . . . . . . . . . 
+2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 . . . . . 2 2 . . . . . 2 2 
+2 2 . 2 2 2 . 2 . . . . . . 2 . 
+. 2 . 2 . 2 . 2 . . . . . . 2 . 
+. 2 . 2 2 2 . 2 2 . . . . . 2 2 
+. 2 . . . . . 2 2 2 2 2 2 2 2 2 
+. 2 2 2 . . 2 2 . . . . . . . . 
+2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 
+2 . 2 2 . . . . . . . . . . . 2 
+2 . 2 2 . . 2 2 2 2 2 . 2 2 . 2 
+2 . 2 2 . 2 2 2 2 2 2 . 2 2 2 2 
+2 . . . . 2 2 2 . 2 2 . 2 2 2 . 
+2 2 2 2 . . . . . 2 2 . 2 . 2 . 
+. . . 2 2 2 2 2 2 2 2 2 2 2 2 . 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.dungeon.stairSouth,sprites.dungeon.purpleOuterNorth1,sprites.dungeon.purpleOuterNorth0,sprites.dungeon.purpleInnerNorthWest,sprites.dungeon.purpleInnerNorthEast,sprites.dungeon.purpleInnerSouthWest,sprites.dungeon.purpleInnerSouthEast,sprites.dungeon.purpleOuterEast0,sprites.dungeon.purpleOuterEast1,sprites.dungeon.purpleOuterSouth1,sprites.dungeon.purpleOuterWest1,sprites.dungeon.purpleOuterWest0,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterSouth0,sprites.dungeon.purpleOuterNorthEast,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.stairLadder,sprites.dungeon.stairLarge,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.hazardSpike,sprites.dungeon.buttonOrangeDepressed,sprites.dungeon.buttonOrange,sprites.dungeon.buttonTeal,sprites.dungeon.floorLight3,sprites.dungeon.floorDark1,sprites.dungeon.floorLightMoss,sprites.dungeon.floorLight4,sprites.dungeon.floorLight0,sprites.dungeon.doorClosedNorth,sprites.dungeon.doorClosedSouth,sprites.dungeon.buttonPink,sprites.dungeon.purpleOuterSouth2,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterWest2,sprites.dungeon.floorLight1,sprites.dungeon.floorLight5,sprites.dungeon.buttonPinkDepressed,sprites.dungeon.stairEast,sprites.builtin.crowd2,sprites.builtin.oceanDepths9,sprites.castle.rock2],
+            TileScale.Sixteen
+        ))
+    tiles.setWallAt(tiles.getTileLocation(1, 3), true)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(2, 1))
+    Ghost_3 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_3, tiles.getTileLocation(6, 3))
+    Ghost_3.setVelocity(80, 0)
+    Ghost_2 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f f . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 b f f . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 1 b f . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 1 1 f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 f f f f . . . . . 
+. . . . . . f d 1 1 1 d d 1 c 1 1 1 b f . . . . 
+. . . . . . f b 1 1 f c d f 1 b 1 b f f . . . . 
+. . . . . . f 1 1 1 1 1 b f b f b f f . . . . . 
+. . . . . . f 1 b 1 b d f c f f f f . . . . . . 
+. . . . . . f b f b f c f c c c f . . . . . . . 
+. . . . . . f f f f f f f f f f . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f f . . f . . . . . 
+. . . . . . . . . . f f f f f f f f f . . . . . 
+. . . . . . . . . . . f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_2, tiles.getTileLocation(11, 6))
+    Ghost_2.setVelocity(0, 80)
+    Ghost_4 = sprites.create(img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 d b f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 d d f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 1 1 d d d d d d f . . . . . . 
+. . . . . . f d 1 d d d d d d d b f . . . . . . 
+. . . . . . f d 1 d f b d d b b f f . . . . . . 
+. . . . . . f b d d f c d b b c f . . . . . . . 
+. . . . . f f f f c c d d b f f f . . . . . . . 
+. . . . f c b 1 b b b f c f f f f . . . . . . . 
+. . . . f 1 b 1 d c f f f f f f f f . . . . . . 
+. . . . f d f d f . . f f f f f f f f f f . . . 
+. . . . . f . f . . . . . f f f f f f . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`, SpriteKind.Enemy)
+    tiles.placeOnTile(Ghost_4, tiles.getTileLocation(6, 7))
+    Ghost_4.setVelocity(80, 0)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (sprite, location) {
+    music.pewPew.play()
+    tiles.setTileAt(location, sprites.dungeon.buttonPinkDepressed)
+    for (let value of tiles.getTilesByType(sprites.dungeon.hazardSpike)) {
+        tiles.setTileAt(value, sprites.dungeon.floorLight4)
+        tiles.setWallAt(value, false)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
     music.pewPew.play()
     tiles.setTileAt(location, sprites.dungeon.buttonTealDepressed)
@@ -64,6 +196,53 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (spr
         tiles.setTileAt(value, sprites.dungeon.floorDark0)
         tiles.setWallAt(value, false)
     }
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
+    tiles.setTilemap(tiles.createTilemap(
+            hex`10001000202021212003060606082020202021212116161516040a0a0a09101010101020202216150b0c0c0c0c0c0f2424231020211616160d0e0e0e0e0e141024241021201516160d0e0e0e0e0e142310101020211616220d0e0e0e0e0e141023102321211616160d0e0e0e0e0e141024102320202215160d0e0e0e0e0e1410242423202016161611121212121213101010232121151616161616161010101010232321201616162216151010101010102310212116161522161515242423232323102020161616161616101024242323231020211615161616221010232310102410212116161622161622101023232324102120202020212020202020212020212020`,
+            img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 . . . . 2 2 2 2 2 . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 . . . . . . . . . . . . . . 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`,
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.builtin.forestTiles5,sprites.builtin.forestTiles9,sprites.builtin.forestTiles13,sprites.builtin.forestTiles6,sprites.builtin.forestTiles14,sprites.builtin.forestTiles7,sprites.builtin.forestTiles11,sprites.dungeon.stairNorth,sprites.castle.tilePath1,sprites.castle.tilePath2,sprites.castle.tilePath4,sprites.castle.tilePath5,sprites.castle.tilePath3,sprites.castle.tileGrass3,sprites.castle.tilePath7,sprites.castle.tilePath8,sprites.castle.tilePath9,sprites.castle.tilePath6,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass3,sprites.builtin.forestTiles20,sprites.builtin.forestTiles23,sprites.builtin.forestTiles21,sprites.builtin.forestTiles22,sprites.builtin.forestTiles2,sprites.builtin.forestTiles1,sprites.builtin.forestTiles3,sprites.builtin.forestTiles24,sprites.builtin.forestTiles17,sprites.castle.saplingPine,sprites.castle.saplingOak,sprites.castle.tileDarkGrass1,sprites.castle.tileGrass1,sprites.castle.tileGrass2],
+            TileScale.Sixteen
+        ))
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(7, 3))
+    Ghost_2.destroy()
+    Final_character = sprites.create(img`
+. . . . . . . . . . . . . . . . 
+. . . . . f f 4 4 f f . . . . . 
+. . . . f 5 4 5 5 4 5 f . . . . 
+. . . f e 3 3 3 3 3 3 e f . . . 
+. . f b 3 3 3 3 3 3 3 3 b f . . 
+. . f 3 3 3 3 3 3 3 3 3 3 f . . 
+. f b 3 3 3 3 3 3 3 3 3 3 b f . 
+. f b b 3 3 3 3 3 3 3 3 b b f . 
+. f b b b b b b b b b b b b f . 
+f c b b b b b b b b b b b b f . 
+f b b b b b b b b b b b b c f . 
+f f b b b b b b b b b b c f . . 
+. f c c c f f f f f f f e c . . 
+. . . f b b d b d d e 4 4 e . . 
+. . . f f 1 1 d 1 d e e f . . . 
+. . . . . f b b f f f . . . . . 
+`, SpriteKind.NPC)
+    tiles.placeOnTile(Final_character, tiles.getTileLocation(7, 7))
+    music.playMelody("E D G F B A C5 B ", 120)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     tiles.setTilemap(tiles.createTilemap(
@@ -91,6 +270,10 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (spri
         ))
     tiles.placeOnTile(mySprite, tiles.getTileLocation(2, 2))
     game.splash("Hmm...looks like I need to find a way across")
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+    music.wawawawaa.play()
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairEast, function (sprite, location) {
     tiles.setTilemap(tiles.createTilemap(
@@ -349,6 +532,13 @@ scene.onHitWall(SpriteKind.Enemy, function (sprite) {
 `)
         }
     }
+    if (Ghost_2.isHittingTile(CollisionDirection.Top)) {
+        Ghost_2.vy = -1 * Ghost_2.vy
+    } else {
+        if (Ghost_2.isHittingTile(CollisionDirection.Bottom)) {
+            Ghost_2.vy = -1 * Ghost_2.vy
+        }
+    }
     if (Ghost_3.isHittingTile(CollisionDirection.Right)) {
         Ghost_3.vx = -1 * Ghost_3.vx
         Ghost_3.setImage(img`
@@ -480,10 +670,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonOrange, function (s
         tiles.setWallAt(value, false)
     }
 })
-let Ghost_4: Sprite = null
-let Ghost_3: Sprite = null
+let Final_character: Sprite = null
 let Ghost_2: Sprite = null
 let Ghost_1: Sprite = null
+let Ghost_3: Sprite = null
+let Ghost_4: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(img`
 f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f 
@@ -612,23 +803,23 @@ for (let index = 0; index < 4; index++) {
 }
 music.powerUp.play()
 tiles.setTilemap(tiles.createTilemap(
-            hex`1000100000000e110f110f13110f110f0f10000000001215151515151515151523180000000012151515231515151523232b000000001215152315151515152315180000000012151515152315151523152a0000000012151515152315151523151800000000161717171b2323141a171a1900000000000000001c1515180000000000000000000000002c1515180000000000000000000000001c15152b00000000000000000e11130f1d23151e0f110f10000000001c301515151515151515151e0f0f00001c1515231515151515231524262600001c1515151515152315151524262600001c23151515232323151515141a1a0000161a171a1a1a291a1a171a190000`,
+            hex`1000100000000e110f110f13110f110f0f10000000001215152115151515151523180000000012151515231515151523231e110f00001221152315151521152315242626000012151515152315151523152426260000121515151521151515231514171a0000161717171b2323141a171a1900000000000000001c1515180000000000000000000000002c1515180000000000000000000000001c15152b00000000000000000e11130f1d23151e0f110f10000000001c211515151515151515152b000000001c1515231515151515231518000000001c1515151515152315151518000000001c231515152330231515211800000000161a171a1a1a291a1a171a190000`,
             img`
 . . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
+. . 2 . . . . . . . . . . 2 2 2 
 . . 2 . . . . . . . . . . 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
-. . 2 . . . . . . . . . . 2 . . 
-. . 2 . . . . . . . . . . 2 . . 
+. . 2 . . . . . . . . . . 2 2 2 
 . . 2 2 2 2 2 . . 2 2 2 2 2 . . 
 . . . . . . 2 . . 2 . . . . . . 
 . . . . . . 2 . . 2 . . . . . . 
 . . . . . . 2 . . 2 . . . . . . 
 . . 2 2 2 2 2 . . 2 2 2 2 2 . . 
-. . 2 . . . . . . . . . . 2 2 2 
 . . 2 . . . . . . . . . . 2 . . 
 . . 2 . . . . . . . . . . 2 . . 
-. . 2 . . . . . . . . . . 2 2 2 
+. . 2 . . . . . . . . . . 2 . . 
+. . 2 . . . . . . . . . . 2 . . 
 . . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
 `,
             [myTiles.tile0,sprites.castle.tilePath1,sprites.castle.tilePath9,sprites.castle.tilePath3,sprites.castle.tilePath7,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath8,sprites.castle.tilePath5,sprites.builtin.forestTiles0,sprites.dungeon.darkGroundNorthWest0,sprites.castle.rock0,sprites.castle.rock1,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterNorth1,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterNorth2,sprites.dungeon.greenInnerNorthWest,sprites.dungeon.floorDark0,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.greenOuterSouth1,sprites.dungeon.greenInnerNorthEast,sprites.dungeon.greenOuterWest0,sprites.dungeon.greenInnerSouthEast,sprites.dungeon.greenInnerSouthWest,sprites.dungeon.floorDark3,sprites.dungeon.floorDarkDiamond,sprites.dungeon.floorDark4,sprites.dungeon.floorMixed,sprites.dungeon.floorDark1,sprites.dungeon.hazardSpike,sprites.dungeon.stairLarge,sprites.dungeon.stairWest,sprites.dungeon.stairEast,sprites.dungeon.stairLadder,sprites.dungeon.greenOuterSouth2,sprites.dungeon.greenOuterEast2,sprites.dungeon.greenOuterEast1,sprites.dungeon.greenOuterWest2,sprites.dungeon.greenSwitchUp,sprites.dungeon.greenSwitchDown,sprites.castle.rock2,sprites.dungeon.buttonTeal,sprites.dungeon.buttonTealDepressed,myTiles.tile1,myTiles.tile2],
